@@ -133,7 +133,7 @@ class LoadAnnotations(object):
         self.with_calib_kittiobject = with_calib_kittiobject
         if self.with_calib:
             # modify the path of nuscenes dataset
-            self.nuscenes = json.load(open('/data/nuscenes/mmseg/calib.json','r'))
+            self.nuscenes = json.load(open('/data/nuscenes/calib.json','r'))
         if self.with_calib_argoverse:
             # modify the path of argoverse dataset
             self.argoverse = json.load(open('/data/argoversev1.0/calib.json','r'))
