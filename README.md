@@ -1,5 +1,5 @@
 # HFT: Lifting Perspective Representations via Hybrid Feature Transformation
-This repositary contains Pytorch implementation for [HFT](https://arxiv.org/abs/2204.05068)
+This repositary contains the official Pytorch implementation for paper [HFT](https://arxiv.org/abs/2204.05068).
 ![image](https://user-images.githubusercontent.com/77472466/162715638-145897ba-2c35-4734-b6a7-b30048ab80f8.png)
 ## Introduction
 Autonomous driving requires accurate and detailed Bird's Eye View (BEV) semantic segmentation for decision making, which is one of the most challenging tasks for high-level scene perception. Feature transformation from frontal view to BEV is the pivotal technology for BEV semantic segmentation. Existing works can be roughly classified into two categories, i.e., Camera model-Based Feature Transformation (CBFT) and Camera model-Free Feature Transformation (CFFT). In this paper, we empirically analyze the vital differences between CBFT and CFFT. The former transforms features based on the flat-world assumption, which may cause distortion of regions lying above the ground plane. The latter is limited in the segmentation performance due to the absence of geometric priors and time-consuming computation. In order to reap the benefits and avoid the drawbacks of CBFT and CFFT, we propose a novel framework with a Hybrid Feature Transformation module (HFT). Specifically, we decouple the feature maps produced by HFT for estimating the layout of outdoor scenes in BEV. Furthermore, we design a mutual learning scheme to augment hybrid transformation by applying feature mimicking. Notably, extensive experiments demonstrate that with negligible extra overhead, HFT achieves a relative improvement of 13.3% on the Argoverse dataset and 16.8% on the KITTI 3D Object datasets compared to the best-performing existing method.
@@ -13,27 +13,33 @@ To use our code, please install the following dependencies:
 
 For more requirements, please see [requirements.txt](https://github.com/JiayuZou2020/HFT/blob/main/HFT/requirements.txt) for details. You can refer to the [guidelines](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/en/get_started.md#installation) to install the environment correctly.
 ## Data Preparation
-We conduct experiments of nuScenes, Argoverse, Kitti Raw, Kitti Odometry, and Kitti 3D Object datasets. The datasets' structures look like: 
-### [nuScenes](https://www.nuscenes.org/download)
+We conduct experiments of [nuScenes](https://www.nuscenes.org/download), [Argoverse](https://www.argoverse.org/), [Kitti Raw](http://www.cvlibs.net/datasets/kitti/raw_data.php), [Kitti Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php), and [Kitti 3D Object](http://www.cvlibs.net/datasets/kitti/eval_3dobject.php). Please down the datasets and place them under /data/nuscenes/ and so on. Note that *calib.json* contains the intrinsics and extrinsics matrixes of every image. The datasets' structures look like: 
+### [Dataset Structure](https://www.nuscenes.org/download)
+```
+data
+├── nuscenes
+|   ├── img_dir
+|   ├── ann_bev_dir
+|   ├── calib.json
+├── argoversev1.0
+|   ├── img_dir
+|   ├── ann_bev_dir
+|   ├── calib.json
+├── kitti_processed
+|   ├── kitti_raw
+|   |   ├── img_dir
+|   |   ├── ann_bev_dir
+|   |   ├── calib.json
+|   ├── kitti_odometry
+|   |   ├── img_dir
+|   |   ├── ann_bev_dir
+|   |   ├── calib.json
+|   ├── kitti_object
+|   |   ├── img_dir
+|   |   ├── ann_bev_dir
+|   |   ├── calib.json
 ```
 
-```
-### [Argoverse](https://www.argoverse.org/)
-```
-
-```
-### [Kitti Raw](http://www.cvlibs.net/datasets/kitti/raw_data.php)
-```
-
-```
-### [Kitti Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php)
-```
-
-```
-### [Kitti 3D Object](http://www.cvlibs.net/datasets/kitti/eval_3dobject.php)
-```
-
-```
 ## Training
 Take Argoverse as an example. To train a semantic segmentation model under a specific configuration, run:
 ```
