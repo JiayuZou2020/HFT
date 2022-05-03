@@ -2,7 +2,9 @@
 backbone_norm_cfg = dict(type='LN', requires_grad=True)
 model = dict(
     type='pyva_BEVSegmentor',
-    pretrained="/mnt/cfs/algorithm/junjie.huang/models/swin_tiny_patch4_window7_224.pth",
+    # download the pretrained weight from https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth
+    # and modify path of the pretrained weight 
+    pretrained="weights/swin_tiny_patch4_window7_224.pth",
     backbone=dict(
         type='SwinTransformer',
         pretrain_img_size=224,
