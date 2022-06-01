@@ -39,6 +39,9 @@ data
 |   |   ├── ann_bev_dir
 |   |   ├── calib.json
 ```
+### [Prepare calib.json]
+"calib.json" contains the camera parameters of each image. Readers can generate the "calib.json" file by the instruction of [nuScenes](https://www.nuscenes.org/nuscenes#download), [Argoverse](https://www.argoverse.org/), [Kitti Raw](http://www.cvlibs.net/datasets/kitti/raw_data.php), [Kitti Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php), and [Kitti 3D Object](http://www.cvlibs.net/datasets/kitti/eval_3dobject.php). We also upload 'calib.json' for each dataset.
+
 
 ## Training
 Take Argoverse as an example. To train a semantic segmentation model under a specific configuration, run:
