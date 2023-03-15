@@ -13,7 +13,7 @@ To use our code, please install the following dependencies:
 
 For more requirements, please see [requirements.txt](https://github.com/JiayuZou2020/HFT/blob/main/HFT/requirements.txt) for details. You can refer to the [guidelines](https://github.com/open-mmlab/mmsegmentation/blob/master/docs/en/get_started.md#installation) to install the environment correctly.
 ## Data Preparation
-We conduct experiments of [nuScenes](https://www.nuscenes.org/download), [Argoverse](https://www.argoverse.org/), [Kitti Raw](http://www.cvlibs.net/datasets/kitti/raw_data.php), [Kitti Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php), and [Kitti 3D Object](http://www.cvlibs.net/datasets/kitti/eval_3dobject.php). Please down the datasets and place them under /data/nuscenes/ and so on. Note that *calib.json* contains the intrinsics and extrinsics matrixes of every image. Please follow [here](https://github.com/manila95/monolayout) to generate the BEV annotation (*ann_bev_dir*) for KITTI datasets. Refer to the script *[make_nuscenes_labels](https://github.com/tom-roddick/mono-semantic-maps/blob/master/scripts)* to get the BEV annotation for nuScenes and Argoverse, respectively. The datasets' structures look like: 
+We conduct experiments of [nuScenes](https://www.nuscenes.org/download), [Argoverse](https://www.argoverse.org/), [Kitti Raw](http://www.cvlibs.net/datasets/kitti/raw_data.php), [Kitti Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php), and [Kitti 3D Object](http://www.cvlibs.net/datasets/kitti/eval_3dobject.php). Please down the datasets and place them under /data/nuscenes/ and so on. Note that *calib.json* contains the intrinsics and extrinsics matrixes of every image. Please follow *[here](https://github.com/manila95/monolayout)* to generate the BEV annotation (*ann_bev_dir*) for KITTI datasets. Refer to the script *[make_nuscenes_labels](https://github.com/tom-roddick/mono-semantic-maps/blob/master/scripts)* to get the BEV annotation for nuScenes and Argoverse, respectively. The datasets' structures look like: 
 ### Dataset Structure
 ```
 data
@@ -41,7 +41,7 @@ data
 ```
 
 ### Prepare calib.json
-"calib.json" contains the camera parameters of each image. Readers can generate the "calib.json" file by the instruction of [nuScenes](https://www.nuscenes.org/nuscenes#download), [Argoverse](https://www.argoverse.org/), [Kitti Raw](http://www.cvlibs.net/datasets/kitti/raw_data.php), [Kitti Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php), and [Kitti 3D Object](http://www.cvlibs.net/datasets/kitti/eval_3dobject.php). We also upload 'calib.json' for each dataset to [google drive](https://drive.google.com/drive/folders/1Ahaed1OsA1EqlJOCHHN-MQQr2VpF8H7U?usp=sharing) and [Baidu Net Disk](https://pan.baidu.com/s/1wEzHWkazS5vLPZJVjpzHMw?pwd=2022).
+"calib.json" contains the camera parameters of each image. Readers can generate the "calib.json" file by the instruction of [nuScenes](https://www.nuscenes.org/nuscenes#download), [Argoverse](https://www.argoverse.org/), [Kitti Raw](http://www.cvlibs.net/datasets/kitti/raw_data.php), [Kitti Odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php), and [Kitti 3D Object](http://www.cvlibs.net/datasets/kitti/eval_3dobject.php). We also upload *calib.json* for each dataset to [google drive](https://drive.google.com/drive/folders/1Ahaed1OsA1EqlJOCHHN-MQQr2VpF8H7U?usp=sharing) and [Baidu Net Disk](https://pan.baidu.com/s/1wEzHWkazS5vLPZJVjpzHMw?pwd=2022).
 
 
 ## Training
